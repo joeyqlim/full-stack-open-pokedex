@@ -14,8 +14,8 @@ jobs:
       - uses: actions/checkout@v2
       # Setup node.js because app uses JS
       - uses: actions/setup-node@v1
-              with:
-                node-version: '12.x'
+        with:
+          node-version: "12.x"
       # Install dependencies
       - name: npm install
         run: npm install
