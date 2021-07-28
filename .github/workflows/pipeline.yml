@@ -19,6 +19,12 @@ jobs:
       # Install dependencies
       - name: npm install
         run: npm install
-      # Run linter
+      # Run linter and fix
       - name: lint
-        run: npm run eslint
+        run: npm run lint-fix
+      # Build
+      - name: build
+        run: npm run build
+      # Test
+      - name: test
+        run: npm run test
