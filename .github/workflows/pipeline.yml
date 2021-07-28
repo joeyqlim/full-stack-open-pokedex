@@ -1,0 +1,24 @@
+name: Deployment pipeline
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  simple_deployment_pipeline:
+    runs-on: ubuntu-18.04
+    steps:
+      # The uses keyword tells the workflow to run a specific action
+      # Checkout the project source code from git
+      - uses: actions/checkout@v2
+      # Setup node.js because app uses JS
+      - uses: actions/setup-node@v1
+              with:
+                node-version: '12.x'
+      # Install dependencies
+      - name: npm install
+        run: npm install
+      # Run linter
+      - name: lint
+        run: npm run eslint
