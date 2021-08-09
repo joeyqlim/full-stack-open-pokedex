@@ -44,3 +44,4 @@ jobs:
           heroku_email: "joeyqlim@gmail.com"
           healthcheck: "https://cicd-raichu.herokuapp.com/health"
           checkstring: "ok"
+          rollbackonhealthcheckfailed: true
