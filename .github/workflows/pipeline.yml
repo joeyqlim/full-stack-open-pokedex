@@ -49,3 +49,10 @@ jobs:
           healthcheck: "https://cicd-raichu.herokuapp.com/health"
           checkstring: "ok"
           rollbackonhealthcheckfailed: true
+      # Update patch version and tag
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@1.33.0
+        if: ${{ github.event_name == 'push' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BUMP: patch
